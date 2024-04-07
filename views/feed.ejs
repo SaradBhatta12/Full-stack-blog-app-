@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+    <link rel="stylesheet" href="/stylesheet/feed.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="navbar">
+        <div class="brand">SBlog.</div>
+        <div class="menu-toggle">
+            <i class="material-icons" id="menu-open">menu</i>
+            <i class="material-icons" id="menu-close">close</i>
+        </div>
+        <ul class="menu">
+            <li><a href="/feed">Home</a></li>
+            <li><a href="/">Profile</a></li>
+            <li><a href="#">News</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </div>
+
+    <a href="/newpost">
+        <div class="newPost">
+            <img src="/necessery/post.png" alt="">
+        </div>
+    </a>
+
+    <% Posts.reverse().forEach((post)=>{ %>
+
+
+        <div class="post">
+            <div class="user-info">
+                <img src="<%=post.user.profilePic%>" alt="User Profile Picture">
+                <div class="username-date">
+                    <span class="username">
+                        <%= post.user.username %>
+                    </span>
+                    <span class="date">
+                        <%=post.createdAt%>
+                    </span>
+                </div>
+            </div>
+            <div class="post-content">
+                <img src="<%= post.image%>" alt="Post Image">
+                <p class="caption">
+                    🥰 <%=post.caption %>
+                </p>
+            </div>
+            <div class="post-down">
+                <div class="post-actions">
+                    <div class="like-comment-share">
+                        <i class="material-icons">thumb_up_alt</i>
+                        <span class="action-text">Like</span>
+                    </div>
+                    <div class="like-comment-share">
+                        <i class="material-icons">mode_comment</i>
+                        <span class="action-text">Comment</span>
+                    </div>
+                    <div class="like-comment-share">
+                        <i class="material-icons">share</i>
+                        <span class="action-text">Share</span>
+                    </div>
+                </div>
+                <form method="post" class="comment-post" action="/comment/<%=post._id%>" `>
+                    <input type="text" name="comment" placeholder="comment please">
+                    <button>comment</button>
+                </form>
+            </div>
+        </div>
+        <% }) %>
+
+
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    const menuOpen = document.getElementById("menu-open");
+                    const menuClose = document.getElementById("menu-close");
+                    const menu = document.querySelector(".menu");
+
+                    menuOpen.addEventListener("click", function () {
+                        menu.classList.add("active");
+                    });
+
+                    menuClose.addEventListener("click", function () {
+                        menu.classList.remove("active");
+                    });
+                });
+
+            </script>
+</body>
+
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>edit profile</title>
+</head>
+
+<body>
+
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="image" class="image">
+        <img src="https://e7.pngegg.com/pngimages/799/987/png-clipart-computer-icons-avatar-icon-design-avatar-heroes-computer-wallpaper-thumbnail.png"
+            alt="" class="imgIcon">
+        <input type="text" name="name" placeholder="your name">
+        <input type="text" name="profession" placeholder="profession">
+        <button>edit</button>
+    </form>
+
+    <script>
+        let file = document.querySelector(".image")
+        let fileIco = document.querySelector(".imgIcon")
+        fileIco.addEventListener("click", () => {
+            file.click()
+        })
+    </script>
+
+    <style>
+        body,
+        html {
+            background-color: black;
+            color: aqua;
+            padding: 0%;
+            margin: 0%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+
+        }
+
+        form {
+            height: 30rem;
+            width: 40vmax;
+            border: solid aqua 1px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            gap: 14px;
+            justify-content: center;
+            border-radius: 20px;
+        }
+
+        form input {
+
+            border: solid aqua 1px;
+            padding: 10px;
+            background-color: transparent;
+            color: aqua;
+            border-radius: 5px;
+
+        }
+
+        form img {
+            height: 90px;
+            width: 90px;
+            border-radius: 50%;
+        }
+
+        form img:hover {
+            filter: blur(1px);
+            cursor: pointer;
+
+
+        }
+
+        form button {
+            background-color: blue;
+            color: black;
+            padding: 10px;
+            border-radius: 5px;
+            width: 70px;
+            cursor: pointer;
+            text-transform: uppercase;
+            border: none;
+        }
+
+        .image {
+            display: none;
+        }
+    </style>
+
+</body>
+
+</html>
