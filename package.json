@@ -14,5 +14,17 @@
     "passport-local": "^1.0.0",
     "session": "^0.1.0",
     "uuid": "^9.0.1"
-  }
+  },
+  "name": "socialmedia-imp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "node index.js",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "author": "sarad",
+  "license": "ISC",
+  "description": ""
 }
